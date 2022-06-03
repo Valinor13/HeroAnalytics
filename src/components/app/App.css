@@ -1,0 +1,96 @@
+.authContainer {
+  background-image: url('../../assets/authBackground.png');
+  background-size: cover;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.altLogo {
+  width: 535px;
+  height: auto;
+  margin-bottom: 100px;
+}
+
+.passwordGhost {
+  position: absolute;
+  margin-top: 1.5px;
+  max-width: 535px;
+  width: 100%;
+  height: 250px;
+  background-color: #1e2353;
+  opacity: 0.44;
+  border-radius: 5px;
+}
+
+.signupGhost {
+  position: absolute;
+  margin-top: 1px;
+  max-width: 535px;
+  width: 100%;
+  height: 421px;
+  background-color: #1e2353;
+  opacity: 0.44;
+  border-radius: 5px;
+}
+
+.loginGhost {
+  position: absolute;
+  margin-top: 1.5px;
+  max-width: 533px;
+  width: 100%;
+  height: 336px;
+  background-color: #1e2353;
+  opacity: 0.44;
+  border-radius: 5px;
+}
+
+.authInsideContainer {
+  max-width: 535px;
+  width: 100%;
+}
+
+.card {
+  background-color: transparent !important;
+  height: auto;
+}
+
+.cardHeader {
+  color: white;
+  text-align: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #DCDADB;
+}
+
+.formGroup {
+  width: 432px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.formLabel {
+  color: white;
+  margin-top: 15px;
+}
+
+.formInput {
+  color: white !important;
+  background-color: #000000 !important;
+  opacity: 0.65;
+}
+
+.btn-primary {
+  margin-top: 30px;
+  height: 45px !important;
+  background-color: #21c6f6 !important;
+  color: #000000 !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.fs-20 {
+  font-size: 20px !important;
+}
