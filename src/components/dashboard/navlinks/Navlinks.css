@@ -23,7 +23,7 @@
   position: relative;
   z-index: 10;
   width: 96vw;
-  height: 77%;
+  height: 85%;
   background-color: #eaf4f4;
   box-shadow: 0px -6px 20px #c5c7c9;
 }
@@ -64,6 +64,8 @@
   margin-right: auto;
   border-radius: 8px;
   box-shadow: 6px 6px 16px #c5c7c9;
+  margin-top: 3vh;
+  margin-bottom: 6vh;
 }
 
 tr {

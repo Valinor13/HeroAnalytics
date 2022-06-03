@@ -1,11 +1,11 @@
-import React from 'react';
-import Table from 'react-bootstrap/Table';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChartLine } from '@fortawesome/free-solid-svg-icons';
-import { useExp } from '../../../context/ExpProvider';
-import './Navlinks.css';
+import React from "react";
+import Table from "react-bootstrap/Table";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChartLine } from "@fortawesome/free-solid-svg-icons";
+import { useExp } from "../../../context/ExpProvider";
+import "./Navlinks.css";
 
-const tableHeaders = ['Favorite', 'Review', 'Gaze', 'Proximity', 'Touch' ];
+const tableHeaders = ["Favorite", "Review", "Gaze", "Proximity", "Touch"];
 
 function Insights() {
   const { expName, userExperiences, firestoreError } = useExp();
@@ -23,7 +23,7 @@ function Insights() {
           {firestoreError && <p>{firestoreError}</p>}
         </div>
         <div className="dashboardFolderTab">
-          <h4 style={{ paddingTop: '5px' }}>{expName}</h4>
+          <h4 style={{ paddingTop: "5px" }}>{expName}</h4>
         </div>
       </div>
       <div className="dashboardMainBody">
@@ -31,9 +31,9 @@ function Insights() {
           <div className="dashboardMainBodyChart">Content Incoming...</div>
           <div className="dashboardMainBodyChart">Content Incoming...</div>
         </div>
-        <div className="dashboardMainBodyTable">
-          {userExperiences.map((experience, index) => (
-            <Table key={index} responsive striped>
+        {userExperiences.map((experience, index) => (
+          <div key={index} className="dashboardMainBodyTable">
+            <Table responsive striped>
               <thead>
                 <tr>
                   <th>{`User ${experience.userId}`}</th>
@@ -77,8 +77,8 @@ function Insights() {
                 </tr>
               </tbody>
             </Table>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </>
   );

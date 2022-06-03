@@ -2,12 +2,12 @@ import firebase from "firebase/compat/app";
 import { getAuth } from "firebase/auth";
 
 const app = firebase.initializeApp({
-  apiKey: process.env.API_KEY,
-  authDomain: process.env.AUTH_DOMAIN,
-  projectId: process.env.PROJECT_ID,
-  storageBucket: process.env.STORAGE_BUCKET,
-  messagingSenderId: process.env.MESSAGING_SENDER_ID,
-  appId: process.env.APP_ID,
+  apiKey: "AIzaSyBMbfTHW9Py98NtKNFCr6OBGhqOzuRtGlM",
+  authDomain: "heroxr-development.firebaseapp.com",
+  projectId: "heroxr-development",
+  storageBucket: "heroxr-development.appspot.com",
+  messagingSenderId: "906084342313",
+  appId: "1:906084342313:web:2b66eed05b3c9fcdbe1a38",
 });
 
 export const auth = getAuth(app);
