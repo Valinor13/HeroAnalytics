@@ -71,3 +71,7 @@
 tr {
   height: 6vh;
 }
+
+.table {
+  margin-bottom: 0 !important;
+}
