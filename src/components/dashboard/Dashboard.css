@@ -55,3 +55,17 @@
   padding-bottom: 10px;
   cursor: pointer;
 }
+
+.sidebarIcon:hover {
+  background-color: #e2e5e8;
+  box-shadow: -3px 3px 6px black inset;
+}
+
+.activeSidebarIcon {
+  height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #1D2E5A;
+  color: white;
+  box-shadow: -3px 3px 6px black;
+}

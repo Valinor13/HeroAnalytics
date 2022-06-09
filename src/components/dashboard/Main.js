@@ -14,7 +14,7 @@ import {
   faBullseye,
   faWrench,
 } from '@fortawesome/free-solid-svg-icons';
-
+  
 const navList = ['Stats', 'Comments', 'Insights', 'Data', 'Target', 'Settings'];
 
 const iconList = [
@@ -38,10 +38,10 @@ function Main() {
       <div className="dashboardSidebar">
         {iconList.map((icon, index) => (
           <FontAwesomeIcon
-            className="sidebarIcon"
+            className={navLink === navList[index] ? 'activeSidebarIcon' : 'sidebarIcon'}
             key={index}
             icon={icon}
-            onClick={() => handleNavLink(navList[index])}
+            onClick={navLink === navLink[index] ? null : () => handleNavLink(navList[index])}
           />
         ))}
       </div>

@@ -55,6 +55,10 @@
   background-color: #ffffff;
   box-shadow: 6px 6px 16px #c5c7c9;
   border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .dashboardMainBodyTable {
@@ -69,9 +73,33 @@
 }
 
 tr {
-  height: 6vh;
+  height: 5vh;
+}
+
+td {
+  width: 20%;
+}
+
+.skinnyCell {
+  width: 10% !important;
+}
+
+.reviewCell {
+  width: 100%;
+  min-height: 5vh;
 }
 
 .table {
   margin-bottom: 0 !important;
+}
+
+.chartBox {
+  width: 100%;
+  text-align: center;
+}
+
+.doughnutChart {
+  width: 100% !important;
+  height: 69% !important;
+  margin: 0 !important;
 }
