@@ -39,7 +39,7 @@
   text-align: center;
   margin-top: -45px;
   margin-left: 5vw;
-  box-shadow: 6px -6px 20px #c5c7c9, -6px 0px 20px #c5c7c9;
+  box-shadow: -6px -3px 10px #c5c7c9, 6px -3px 10px #c5c7c9;
 }
 
 .dashboardMainBodyCharts {
