@@ -4,13 +4,13 @@
   width: 96vw;
   height: auto;
   background-color: #f9fafb;
-  margin-bottom: 10vh;
+  margin-bottom: 6vh;
 }
 
 .dashboardMainHeader {
   margin-top: auto;
   margin-bottom: auto;
-  margin-left: 15px
+  margin-left: 15px;
 }
 
 .navLinkIcon {
@@ -22,7 +22,7 @@
 .dashboardMainBody {
   overflow-y: auto;
   width: 96vw;
-  max-height: 73vh;
+  max-height: 77vh;
   height: auto;
   background-color: #eaf4f4;
   box-shadow: 0px -6px 20px #c5c7c9;
@@ -106,4 +106,16 @@ td {
 
 .barChart {
   height: 95% !important;
+}
+
+@media (max-width: 1000px) {
+  .dashboardMainBodyCharts {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dashboardMainBodyChart {
+    height: auto;
+    width: 65%;
+  }
 }

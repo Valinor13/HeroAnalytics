@@ -44,9 +44,9 @@ function Insights() {
   const logoCProximityArray = [];
   const logoCTouchArray = [];
   const sentimentDic = {
-    logoA: { positive: 0, neutral: 0, negative: 0 },
-    logoB: { positive: 0, neutral: 0, negative: 0 },
-    logoC: { positive: 0, neutral: 0, negative: 0 },
+    logoA: { positive: 0, neutral: 0, ecstatic: 0 },
+    logoB: { positive: 0, neutral: 0, ecstatic: 0 },
+    logoC: { positive: 0, neutral: 0, ecstatic: 0 },
   };
 
   userExperiences.forEach((experience) => {
@@ -111,18 +111,18 @@ function Insights() {
     labels,
     datasets: [
       {
-        label: 'Negative',
-        data: storeLogos.map((logo) => sentimentDic[logo].negative),
-        backgroundColor: 'rgba(228, 57, 73, 0.7)',
-      },
-      {
         label: 'Neutral',
         data: storeLogos.map((logo) => sentimentDic[logo].neutral),
-        backgroundColor: 'rgba(242, 243, 68, 0.7)',
+        backgroundColor: 'rgba(228, 57, 73, 0.7)',
       },
       {
         label: 'Positive',
         data: storeLogos.map((logo) => sentimentDic[logo].positive),
+        backgroundColor: 'rgba(242, 243, 68, 0.7)',
+      },
+      {
+        label: 'Ecstatic',
+        data: storeLogos.map((logo) => sentimentDic[logo].ecstatic),
         backgroundColor: 'rgba(98, 238, 212, 0.7)',
       },
     ],
@@ -269,7 +269,8 @@ function Insights() {
                   <td>{experience.logoA.touch}</td>
                   <td>
                     {experience.favoriteLogo === 'logoA'
-                      ? experience.analyzed_sentiment
+                      ? experience.analyzed_sentiment.charAt(0).toUpperCase() +
+                        experience.analyzed_sentiment.slice(1)
                       : null}
                   </td>
                 </tr>
@@ -284,7 +285,8 @@ function Insights() {
                   <td>{experience.logoB.touch}</td>
                   <td>
                     {experience.favoriteLogo === 'logoB'
-                      ? experience.analyzed_sentiment
+                      ? experience.analyzed_sentiment.charAt(0).toUpperCase() +
+                        experience.analyzed_sentiment.slice(1)
                       : null}
                   </td>
                 </tr>
@@ -299,7 +301,8 @@ function Insights() {
                   <td>{experience.logoC.touch}</td>
                   <td>
                     {experience.favoriteLogo === 'logoC'
-                      ? experience.analyzed_sentiment
+                      ? experience.analyzed_sentiment.charAt(0).toUpperCase() +
+                        experience.analyzed_sentiment.slice(1)
                       : null}
                   </td>
                 </tr>
