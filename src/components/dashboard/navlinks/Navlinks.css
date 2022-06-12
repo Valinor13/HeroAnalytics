@@ -20,24 +20,24 @@
 }
 
 .dashboardMainBody {
-  position: relative;
-  z-index: 10;
+  overflow-y: auto;
   width: 96vw;
-  height: 85%;
+  max-height: 73vh;
+  height: auto;
   background-color: #eaf4f4;
   box-shadow: 0px -6px 20px #c5c7c9;
 }
 
 .dashboardFolderTab {
   position: absolute;
+  z-index: 100;
   background-color: #91efdf;
   color: #ffffff;
   width: 222px;
-  height: 134px;
-  border-radius: 50px;
+  height: 50px;
+  border-radius: 50px 50px 0px 0px;
   text-align: center;
-  z-index: -10;
-  margin-top: 215px;
+  margin-top: -45px;
   margin-left: 5vw;
   box-shadow: 6px -6px 20px #c5c7c9, -6px 0px 20px #c5c7c9;
 }
@@ -81,7 +81,7 @@ td {
 }
 
 .skinnyCell {
-  width: 10% !important;
+  width: 15% !important;
 }
 
 .reviewCell {
@@ -102,4 +102,8 @@ td {
   width: 100% !important;
   height: 69% !important;
   margin: 0 !important;
+}
+
+.barChart {
+  height: 95% !important;
 }

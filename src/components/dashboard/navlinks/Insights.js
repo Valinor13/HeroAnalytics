@@ -1,15 +1,35 @@
 import React from 'react';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Doughnut } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  ArcElement,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { Doughnut, Bar } from 'react-chartjs-2';
 import Table from 'react-bootstrap/Table';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartLine } from '@fortawesome/free-solid-svg-icons';
 import { useExp } from '../../../context/ExpProvider';
 import './Navlinks.css';
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(
+  ArcElement,
+  Tooltip,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
-const tableHeaders = ['Gaze', 'Proximity', 'Touch'];
+const labels = ['Logo A', 'Logo B', 'Logo C'];
+const storeLogos = ['logoA', 'logoB', 'logoC'];
+const tableHeaders = ['Gaze', 'Proximity', 'Touch', 'Rating'];
 
 function Insights() {
   const { expName, userExperiences, firestoreError } = useExp();
@@ -23,6 +43,11 @@ function Insights() {
   const logoCGazeArray = [];
   const logoCProximityArray = [];
   const logoCTouchArray = [];
+  const sentimentDic = {
+    logoA: { positive: 0, neutral: 0, negative: 0 },
+    logoB: { positive: 0, neutral: 0, negative: 0 },
+    logoC: { positive: 0, neutral: 0, negative: 0 },
+  };
 
   userExperiences.forEach((experience) => {
     logoAGazeArray.push(experience.logoA.gaze);
@@ -34,6 +59,7 @@ function Insights() {
     logoCGazeArray.push(experience.logoC.gaze);
     logoCProximityArray.push(experience.logoC.proximity);
     logoCTouchArray.push(experience.logoC.touch);
+    sentimentDic[experience.favoriteLogo][experience.analyzed_sentiment] += 1;
   });
 
   const logoAGazeAvg =
@@ -54,6 +80,53 @@ function Insights() {
     logoCProximityArray.reduce((a, b) => a + b, 0) / logoCProximityArray.length;
   const logoCTouchAvg =
     logoCTouchArray.reduce((a, b) => a + b, 0) / logoCTouchArray.length;
+
+  const logoOptions = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'bottom',
+      },
+      title: {
+        display: false,
+        text: 'Accumalated Average',
+      },
+    },
+  };
+
+  const sentimentOptions = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Sentiment Analysis',
+      },
+    },
+  };
+
+  const sentimentData = {
+    labels,
+    datasets: [
+      {
+        label: 'Negative',
+        data: storeLogos.map((logo) => sentimentDic[logo].negative),
+        backgroundColor: 'rgba(228, 57, 73, 0.7)',
+      },
+      {
+        label: 'Neutral',
+        data: storeLogos.map((logo) => sentimentDic[logo].neutral),
+        backgroundColor: 'rgba(242, 243, 68, 0.7)',
+      },
+      {
+        label: 'Positive',
+        data: storeLogos.map((logo) => sentimentDic[logo].positive),
+        backgroundColor: 'rgba(98, 238, 212, 0.7)',
+      },
+    ],
+  };
 
   const gazeData = {
     labels: ['Logo A', 'Logo B', 'Logo C'],
@@ -130,17 +203,25 @@ function Insights() {
           </p>
           {firestoreError && <p>{firestoreError}</p>}
         </div>
+      </div>
+      <div className="dashboardMainBody">
         <div className="dashboardFolderTab">
           <h4 style={{ paddingTop: '5px' }}>{expName}</h4>
         </div>
-      </div>
-      <div className="dashboardMainBody">
         <div className="dashboardMainBodyCharts">
+          <div className="dashboardMainBodyChart">
+            <Bar
+              className="barChart"
+              options={sentimentOptions}
+              data={sentimentData}
+            />
+          </div>
           <div className="dashboardMainBodyChart">
             <div className="chartBox">
               <h6>Gaze</h6>
               <Doughnut
                 className="doughnutChart"
+                options={logoOptions}
                 data={gazeData}
                 datasetIdKey="Gaze"
               />
@@ -149,6 +230,7 @@ function Insights() {
               <h6>Proximity</h6>
               <Doughnut
                 className="doughnutChart"
+                options={logoOptions}
                 data={proximityData}
                 datasetIdKey="Proximity"
               />
@@ -157,12 +239,12 @@ function Insights() {
               <h6>Touch</h6>
               <Doughnut
                 className="doughnutChart"
+                options={logoOptions}
                 data={touchData}
                 datasetIdKey="Touch"
               />
             </div>
           </div>
-          <div className="dashboardMainBodyChart">Content Incoming...</div>
         </div>
         {userExperiences.map((experience, index) => (
           <div key={index} className="dashboardMainBodyTable">
@@ -178,27 +260,48 @@ function Insights() {
               <tbody>
                 <tr>
                   <td className="skinnyCell">
-                    {experience.favoriteLogo === 'logoA' ? 'Logo A*' : 'Logo A'}
+                    {experience.favoriteLogo === 'logoA'
+                      ? 'Logo A *'
+                      : 'Logo A'}
                   </td>
                   <td>{experience.logoA.gaze}</td>
                   <td>{experience.logoA.proximity}</td>
                   <td>{experience.logoA.touch}</td>
+                  <td>
+                    {experience.favoriteLogo === 'logoA'
+                      ? experience.analyzed_sentiment
+                      : null}
+                  </td>
                 </tr>
                 <tr>
                   <td className="skinnyCell">
-                    {experience.favoriteLogo === 'logoB' ? 'Logo B*' : 'Logo B'}
+                    {experience.favoriteLogo === 'logoB'
+                      ? 'Logo B *'
+                      : 'Logo B'}
                   </td>
                   <td>{experience.logoB.gaze}</td>
                   <td>{experience.logoB.proximity}</td>
                   <td>{experience.logoB.touch}</td>
+                  <td>
+                    {experience.favoriteLogo === 'logoB'
+                      ? experience.analyzed_sentiment
+                      : null}
+                  </td>
                 </tr>
                 <tr>
                   <td className="skinnyCell">
-                    {experience.favoriteLogo === 'logoC' ? 'Logo C*' : 'Logo C'}
+                    {experience.favoriteLogo === 'logoC'
+                      ? 'Logo C *'
+                      : 'Logo C'}
                   </td>
                   <td>{experience.logoC.gaze}</td>
                   <td>{experience.logoC.proximity}</td>
                   <td>{experience.logoC.touch}</td>
+                  <td>
+                    {experience.favoriteLogo === 'logoC'
+                      ? experience.analyzed_sentiment
+                      : null}
+                  </td>
                 </tr>
               </tbody>
             </Table>
@@ -211,17 +314,19 @@ function Insights() {
             >
               <div>
                 <p style={{ paddingRight: '3vw', paddingLeft: '8px' }}>
-                  Rating
-                </p>
-                <p style={{ paddingRight: '3vw', paddingLeft: '8px' }}>
                   Review
                 </p>
-                <p style={{ paddingRight: '3vw', paddingLeft: '8px', width: '148px' }}>
+                <p
+                  style={{
+                    paddingRight: '3vw',
+                    paddingLeft: '8px',
+                    width: '175px',
+                  }}
+                >
                   * = Favorite
                 </p>
               </div>
               <div>
-                <p>{experience.analyzed_sentiment}</p>
                 <p className="reviewCell">{experience.transcription}</p>
               </div>
             </div>
