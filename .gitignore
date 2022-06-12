@@ -26,3 +26,4 @@ firestore.rules
 firestore.indexes.json
 .firebaserc
 .firebase
+src/firebase.js
