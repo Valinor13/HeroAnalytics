@@ -4,19 +4,19 @@
   width: 96vw;
   height: auto;
   background-color: #f9fafb;
-  margin-bottom: 6vh;
+  margin-bottom: 7vh;
 }
 
 .dashboardMainHeader {
-  margin-top: auto;
-  margin-bottom: auto;
+  margin-top: 2vh;
   margin-left: 15px;
 }
 
 .navLinkIcon {
-  width: 96px;
-  height: 96px;
-  margin: 28px;
+  width: 80px;
+  height: 80px;
+  margin-top: 2vh;
+  margin-left: 25px;
 }
 
 .dashboardMainBody {
