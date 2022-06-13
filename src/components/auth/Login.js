@@ -3,6 +3,8 @@ import { Card, Form, Button, Alert } from 'react-bootstrap';
 import { useAuth } from '../../context/AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
 
+// Login - Displays form to login to the application.
+//         Uses bootstrap for styling and connects to firebase auth
 function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();

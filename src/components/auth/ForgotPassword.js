@@ -3,6 +3,8 @@ import { Card, Form, Button, Alert } from 'react-bootstrap';
 import { useAuth } from '../../context/AuthProvider';
 import { Link } from 'react-router-dom';
 
+// ForgotPassword - Displays form to send password reset email.
+//                  Uses bootstrap for styling and connects to firebase auth
 function ForgotPassword() {
   const emailRef = useRef();
   const { resetPassword } = useAuth();

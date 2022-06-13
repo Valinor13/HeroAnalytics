@@ -26,6 +26,9 @@ const iconList = [
   faWrench,
 ];
 
+// Main - Creates the main content of the dashboard page based on selected nav
+//      - Creates the nav sidebar which routes to select dashboard components
+//      - Displays the stats, comments, insights, data, target, and settings
 function Main() {
   const [navLink, setNavLink] = useState('Insights');
 

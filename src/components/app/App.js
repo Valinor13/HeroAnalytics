@@ -8,6 +8,13 @@ import ForgotPassword from '../auth/ForgotPassword';
 import altLogo from '../../assets/altLogo.png';
 import './App.css';
 
+// App - main entry point for the application. This component calls the routes
+//       that navigate the website
+// AuthProvider - the context provider that provides the authentication state
+//                to all components
+// BrowserRouter - the router that handles the routing of the application
+// PrivateRoute - the route that handles loading the webpage after user is
+//                authenticated
 function App() {
   return (
     <AuthProvider>

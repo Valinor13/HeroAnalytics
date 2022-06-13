@@ -5,11 +5,18 @@ import { Alert } from 'react-bootstrap';
 import './Dashboard.css';
 import logo from '../../assets/logo.png';
 
+// Header - Creates the header of the dashboard page
+//        - Displays the user's email and a logout button
+//        - Logs the user out when the logout button is clicked
+//        - Displays an error message if the user fails to log out
+//        - Displays the logo of the application
 function Header() {
   const [error, setError] = useState('');
   const { currentUser, logout } = useAuth();
   const navigate = useNavigate();
 
+  // handleLogout - Logs the user out and displays an error message if the
+  //                logout fails in firebase
   async function handleLogout(e) {
     setError('');
     try {
