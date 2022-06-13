@@ -1,0 +1,6 @@
+# Function dependencies, for example:
+# package>=version
+google-cloud-storage>=2.3.0
+google-cloud-speech>=2.14.0
+google-cloud-language>=2.4.2
+google-cloud-firestore>=2.5.2
