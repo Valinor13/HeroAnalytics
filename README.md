@@ -24,10 +24,10 @@ TEMPLATE:
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <!-- <a href="#getting-started">Getting Started</a> -->
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <!-- <li><a href="#prerequisites">Prerequisites</a></li> -->
+        <!-- <li><a href="#installation">Installation</a></li> -->
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -54,6 +54,7 @@ Currently our implementation uses Virtual Reality (VR) but in future development
 ## Built With
 
   * [Google Cloud Platform](https://cloud.google.com/ "GCP")
+  * [Plastic](https://www.plasticscm.com/ "Plastic")
   * [Unity](https://unity.com/ "Unity")
   * [C#](https://docs.microsoft.com/en-us/dotnet/csharp/ "C#")
   * [Oculus](https://store.facebook.com/quest/?utm_source=www.google.com&utm_medium=oculusredirect "Oculus")
@@ -87,7 +88,7 @@ Currently our implementation uses Virtual Reality (VR) but in future development
   - [x] Store data in Firestore database
 - [x] Interactive web page
   - [x] Display data through charts and tables
-  - [ ] Design UI elements
+  - [x] Design UI elements
 <!-- - [ ] Next steps? -->
 
 
@@ -99,23 +100,23 @@ Currently our implementation uses Virtual Reality (VR) but in future development
 
 <!-- CONTACT INFO -->
 ## Contact
-### Contributors
-* Jay Calhoun
+## Contributors
+#### Jay Calhoun
 
   * [LinkedIn](https://www.linkedin.com/in/jwcalhoun2/)
   * [GitHub](https://github.com/Valinor13)
 
-* Christopher Vandenhende
+#### Christopher Vandenhende
 
   * [LinkedIn](https://www.linkedin.com/in/chrisvanndy/)
   * [GitHub](https://github.com/chrisvanndy)
 
-* Grace Fallon
+#### Grace Fallon
 
   * [LinkedIn](https://www.linkedin.com/in/graceleefallon/)
   * [GitHub](https://github.com/angelofgrace)
 
-* Kyle Gross
+#### Kyle Gross
 
   * [LinkedIn](https://www.linkedin.com/in/kyle-gross-swe/)
   * [GitHub](https://github.com/kyle-gross)
@@ -127,4 +128,4 @@ Currently our implementation uses Virtual Reality (VR) but in future development
 ## Acknowledgments
 
 * [Google Cloud - Speech to Text](https://cloud.google.com/speech-to-text/docs/basics)
-* [Google Cloud - Sentiment Analysis](https://cloud.google.com/natural-language/docs/basics#interpreting_sentiment_analysis_values)
+* [Google Cloud - Sentiment Analysis](https://cloud.google.com/natural-language/docs/basics)
