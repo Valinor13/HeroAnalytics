@@ -60,6 +60,7 @@
 .sidebarIcon:hover {
   background-color: #e2e5e8;
   box-shadow: -3px 3px 6px black inset;
+  border-radius: 3px;
 }
 
 .activeSidebarIcon {
@@ -69,4 +70,5 @@
   background-color: #1D2E5A;
   color: white;
   box-shadow: -3px 3px 6px black;
+  border-radius: 5px;
 }
