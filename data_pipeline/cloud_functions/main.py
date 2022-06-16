@@ -188,7 +188,7 @@ def analyze_sentiment(transcription):
         score = annotations.document_sentiment.score
         
         if -1.0 < score < -0.32:
-            analyzed_sentiment = 'negative'
+            analyzed_sentiment = 'neutral' # negative
         elif -0.32 < score < 0.3:
             analyzed_sentiment = 'neutral'
         elif 0.3 < score < 8.0:    
