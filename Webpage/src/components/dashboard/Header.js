@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthProvider';
 import { Alert } from 'react-bootstrap';
 import './Dashboard.css';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/altLogoC.png';
 
 // Header - Creates the header of the dashboard page
 //        - Displays the user's email and a logout button
