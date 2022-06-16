@@ -124,17 +124,17 @@ function Insights() {
       {
         label: 'Neutral',
         data: storeLogos.map((logo) => sentimentDic[logo].neutral),
-        backgroundColor: 'rgba(228, 57, 73, 0.7)',
+        backgroundColor: 'rgba(33, 198, 246, 0.7)',
       },
       {
         label: 'Positive',
         data: storeLogos.map((logo) => sentimentDic[logo].positive),
-        backgroundColor: 'rgba(242, 243, 68, 0.7)',
+        backgroundColor: 'rgba(222, 57, 9, 0.7)',
       },
       {
         label: 'Ecstatic',
         data: storeLogos.map((logo) => sentimentDic[logo].ecstatic),
-        backgroundColor: 'rgba(98, 238, 212, 0.7)',
+        backgroundColor: 'rgba(160, 72, 192, 0.7)',
       },
     ],
   };
