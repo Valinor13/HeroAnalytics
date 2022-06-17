@@ -27,7 +27,7 @@ def main(event, context):
         if data['favoriteLogo'] is None:
             data['favoriteLogo'] = 'logoA'
 
-        # Transcribe encoded .wav file
+        # Transcribe encoded .wav
         encoded = data['encoding']
         sst_data = transcribe(encoded)
         transcription = sst_data['transcription']
@@ -179,14 +179,14 @@ def analyze_sentiment(transcription):
                 * Further from 0 indicates stronger emotion
             * analyzed_sentiment (str): 'negative', 'neutral', 'positive'
     """
+    sentiment = {}
+
     if transcription:
         client = language_v1.LanguageServiceClient()
         document = language_v1.Document(
             content=transcription, type_=language_v1.Document.Type.PLAIN_TEXT
         )
         annotations = client.analyze_sentiment(request={'document': document})
-
-        sentiment = {}
 
         magnitude = annotations.document_sentiment.magnitude
         score = annotations.document_sentiment.score
