@@ -12,7 +12,7 @@ TEMPLATE:
 <br />
 <h1 align="center">Hero Analytics</h3>
   <p align="center">
-    Hero Analytics is a powerful new tool to gather insights into consumer preferences through the use of data collected from Virtual Reality.
+    Hero Analytics is a powerful new tool to gather insights into consumer preferences through the use of data collected from Virtual Reality experiences.
   </p>
 
 
@@ -28,10 +28,10 @@ TEMPLATE:
     </li>
     <li>
       <!-- <a href="#getting-started">Getting Started</a> -->
-      <ul>
+      <!-- <ul> -->
         <!-- <li><a href="#prerequisites">Prerequisites</a></li> -->
         <!-- <li><a href="#installation">Installation</a></li> -->
-      </ul>
+      <!-- </ul> -->
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -48,16 +48,16 @@ TEMPLATE:
 
 <!-- (screenshot here) -->
 
-Our goal with creating Hero Analytics is to bring together the worlds of digital marketing and Extended Reality (XR) technologies. We achieve this by giving users a place to evaluate and interact with products in virtual reality, while recording the data the users generate within the VR experience. This data is then shipped out of VR and evaluated by AI to gather insights before being stored in the database and displayed on the website.
+Our goal with creating Hero Analytics is to bring together the worlds of digital marketing and Extended Reality (XR) technologies. We achieve this by giving users a place to evaluate and interact with products in virtual reality, while recording the data the users generate within the experience. This data is then shipped out of VR and evaluated by AI to gather insights before being stored in the database and displayed on the website.
 
-Currently our implementation uses Virtual Reality (VR) but in future development we plan to move toward Mixed or Extended Reality.
+Currently our implementation uses Virtual Reality but in future development we plan to move toward Mixed or Extended Reality.
 
 
 
 ## Built With
 
   * [Google Cloud Platform](https://cloud.google.com/ "GCP")
-  * [Plastic](https://www.plasticscm.com/ "Plastic")
+  * [Plastic SCM](https://www.plasticscm.com/ "Plastic SCM")
   * [Unity](https://unity.com/ "Unity")
   * [C#](https://docs.microsoft.com/en-us/dotnet/csharp/ "C#")
   * [Oculus](https://store.facebook.com/quest/?utm_source=www.google.com&utm_medium=oculusredirect "Oculus")
@@ -84,12 +84,12 @@ Here is a sample screenshot from our instruction area:
 ![Instruction](/images/instruction.jpg)
 
 
-Afterward, the users are directed to enter the gallery where they will interact with three different objects. During this time, there is data being collected in reference to: what they look at (gaze), what they are near (proximity), and what they physically engage with (touch).
+Afterward, the users are directed to enter the gallery where we encourage them to organically interact with three different objects. During this time, there is data being collected in reference to: what they look at (gaze), what they are near (proximity), and what they physically engage with (touch).
 
 ![Gallery](/images/gallery.jpg)
 
 
-Finally, the users will enter the debrief room. In this room they will be instructed to choose their favorite object from the gallery, and provide a reason why they chose it via a voice recording.
+Finally, the users will enter the debrief room. In this room they are instructed to choose their favorite of the objects from the gallery, and provide feedback of the item they chose in the form of a brief audio recording.
 
 ![Debrief](/images/debrief.jpg)
 
