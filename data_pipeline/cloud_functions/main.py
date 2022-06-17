@@ -23,6 +23,10 @@ def main(event, context):
         data = get_data(bucket_name, blob_name)
         print(data)
 
+        # FOR DEMO DAY
+        if data['favoriteLogo'] is None:
+            data['favoriteLogo'] = 'logoA'
+
         # Transcribe encoded .wav file
         encoded = data['encoding']
         sst_data = transcribe(encoded)

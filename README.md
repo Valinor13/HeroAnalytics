@@ -6,6 +6,9 @@ TEMPLATE:
 
 
 <!-- PROJECT LOGO -->
+
+![Hero Logo](/images/heroLogo.JPG)
+
 <br />
 <h1 align="center">Hero Analytics</h3>
   <p align="center">
@@ -72,6 +75,31 @@ Currently our implementation uses Virtual Reality (VR) but in future development
 <!-- EXAMPLES -->
 ## Usage
 
+Our user experience consists of three stages:
+
+When users first enter the space, they are greeted in our introduction room where they are given instructions about the controls and how to move around the space. The instructions are delivered via in-app videos that are pre-recorded.
+
+Here is a sample screenshot from our instruction area:
+
+![Instruction](/images/instruction.jpg)
+
+
+Afterward, the users are directed to enter the gallery where they will interact with three different objects. During this time, there is data being collected in reference to: what they look at (gaze), what they are near (proximity), and what they physically engage with (touch).
+
+![Gallery](/images/gallery.jpg)
+
+
+Finally, the users will enter the debrief room. In this room they will be instructed to choose their favorite object from the gallery, and provide a reason why they chose it via a voice recording.
+
+![Debrief](/images/debrief.jpg)
+
+
+Now, the user has completed the whole experience! Short, sweet, and to-the-point.
+The data that they've generated is then shipped to Google Cloud Storage where undergoes data analysis using the Speech-to-text and Sentiment Analysis APIs provided by Google Cloud Platform.
+
+This data is then stored in a Firestore database where it can be queried and displayed on our client portal.
+
+![Web Page](/images/webPage.png)
 <!-- How does it work? -->
 
 
@@ -100,7 +128,6 @@ Currently our implementation uses Virtual Reality (VR) but in future development
 
 <!-- CONTACT INFO -->
 ## Contact
-## Contributors
 #### Jay Calhoun
 
   * [LinkedIn](https://www.linkedin.com/in/jwcalhoun2/)
