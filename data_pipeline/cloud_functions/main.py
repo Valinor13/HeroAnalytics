@@ -191,7 +191,7 @@ def analyze_sentiment(transcription):
             analyzed_sentiment = 'neutral' # negative
         elif -0.32 < score < 0.3:
             analyzed_sentiment = 'neutral'
-        elif 0.3 < score < .8:    
+        elif 0.3 < score < 0.8:    
             analyzed_sentiment = 'positive'
         else:
             analyzed_sentiment = 'ecstatic'
